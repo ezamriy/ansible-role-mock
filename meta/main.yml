@@ -1,0 +1,21 @@
+galaxy_info:
+  author: Eugene Zamriy
+  description: Installs mock and adds user to mock group
+  company: CloudLinux
+  license: MIT
+  min_ansible_version: 1.9
+  platforms:
+    - name: EL
+      versions:
+        - 5
+        - 6
+        - 7
+    - name: Fedora
+      versions:
+        - 23
+        - 24
+        - 25
+  galaxy_tags:
+    - packaging
+    - mock
+dependencies: []

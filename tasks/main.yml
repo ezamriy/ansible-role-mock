@@ -1,0 +1,12 @@
+---
+- name: Installing mock package on Fedora
+  yum: name=mock state=latest
+  when: ansible_distribution == 'Fedora'
+
+- name: Installing mock package on EL
+  yum: name=mock state=latest enablerepo=epel
+  when: ansible_distribution != 'Fedora'
+
+- name: Adding user {{ mock_user }} to mock group
+  user: name={{ mock_user }} groups=mock append=yes
+  when: not((mock_user is none) or (mock_user | trim == ''))
